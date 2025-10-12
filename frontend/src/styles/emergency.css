@@ -1,0 +1,393 @@
+/* Battlefield Medical Assistant - Emergency Mode Styles */
+
+/* Emergency Mode Overlay */
+.emergency-mode {
+  position: relative;
+}
+
+.emergency-mode::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(239, 68, 68, 0.1) 0%,
+    rgba(239, 68, 68, 0.05) 25%,
+    rgba(239, 68, 68, 0.1) 50%,
+    rgba(239, 68, 68, 0.05) 75%,
+    rgba(239, 68, 68, 0.1) 100%
+  );
+  pointer-events: none;
+  z-index: 10000;
+  animation: emergencyPulse 2s ease-in-out infinite;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+  --color-bg: #000000;
+  --color-text: #ffffff;
+  --color-primary: #ff0000;
+  --color-secondary: #ffff00;
+  --color-accent: #00ff00;
+}
+
+.high-contrast body {
+  background: var(--color-bg) !important;
+  color: var(--color-text) !important;
+}
+
+.high-contrast .bg-gray-900 { background: #000000 !important; }
+.high-contrast .bg-gray-800 { background: #111111 !important; }
+.high-contrast .bg-gray-700 { background: #222222 !important; }
+.high-contrast .text-white { color: #ffffff !important; }
+.high-contrast .text-gray-300 { color: #cccccc !important; }
+
+/* Emergency Animations */
+@keyframes emergencyPulse {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes emergencyFlash {
+  0%, 100% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: rgba(239, 68, 68, 0.3);
+  }
+}
+
+@keyframes emergencyStrobe {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes emergencyShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-2px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(2px);
+  }
+}
+
+/* Emergency UI Components */
+.emergency-alert {
+  animation: emergencyFlash 1s ease-in-out infinite;
+  border: 2px solid #e53e3e !important;
+}
+
+.emergency-critical {
+  animation: emergencyStrobe 0.5s ease-in-out infinite;
+  background: linear-gradient(45deg, #e53e3e, #c53030) !important;
+}
+
+.emergency-warning {
+  animation: emergencyShake 0.5s ease-in-out infinite;
+  border: 2px solid #ed8936 !important;
+}
+
+/* Triage Color Coding */
+.triage-immediate {
+  background: #e53e3e !important;
+  color: white !important;
+  font-weight: bold;
+  animation: emergencyPulse 2s ease-in-out infinite;
+}
+
+.triage-delayed {
+  background: #ed8936 !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+.triage-minor {
+  background: #ecc94b !important;
+  color: #1a202c !important;
+  font-weight: bold;
+}
+
+.triage-expectant {
+  background: #718096 !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+/* Emergency Button Styles */
+.btn-emergency {
+  background: linear-gradient(45deg, #e53e3e, #c53030) !important;
+  color: white !important;
+  font-weight: bold;
+  border: none !important;
+  animation: emergencyPulse 2s ease-in-out infinite;
+}
+
+.btn-emergency:hover {
+  background: linear-gradient(45deg, #c53030, #9b2c2c) !important;
+  animation: none;
+}
+
+.btn-emergency:active {
+  transform: scale(0.98);
+}
+
+/* Emergency Input Styles */
+.emergency-input {
+  border: 2px solid #e53e3e !important;
+  background: rgba(239, 68, 68, 0.05) !important;
+}
+
+.emergency-input:focus {
+  border-color: #c53030 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.3) !important;
+}
+
+/* Emergency Status Indicators */
+.status-critical {
+  background: #e53e3e;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  animation: emergencyFlash 1s ease-in-out infinite;
+}
+
+.status-warning {
+  background: #ed8936;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+}
+
+.status-stable {
+  background: #38a169;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+}
+
+/* Emergency Overlay Modals */
+.emergency-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: emergencyPulse 2s ease-in-out;
+}
+
+.emergency-modal-content {
+  background: #1a202c;
+  border: 3px solid #e53e3e;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+  animation: emergencyShake 0.5s ease-in-out;
+}
+
+/* Emergency Typography */
+.emergency-text {
+  color: #e53e3e;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.emergency-text-lg {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e53e3e;
+  text-transform: uppercase;
+}
+
+.emergency-text-xl {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e53e3e;
+  text-transform: uppercase;
+  animation: emergencyPulse 2s ease-in-out infinite;
+}
+
+/* Emergency Layout Utilities */
+.emergency-border {
+  border: 2px solid #e53e3e !important;
+}
+
+.emergency-border-dashed {
+  border: 2px dashed #e53e3e !important;
+}
+
+.emergency-glow {
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.5) !important;
+}
+
+.emergency-glow-lg {
+  box-shadow: 0 0 40px rgba(239, 68, 68, 0.7) !important;
+}
+
+/* Performance Optimizations for Emergency Mode */
+.emergency-performance * {
+  animation-duration: 0.1s !important;
+  transition-duration: 0.1s !important;
+}
+
+.emergency-performance .no-animation {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Print Styles for Emergency Documentation */
+@media print {
+  .emergency-print {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .emergency-print .triage-immediate {
+    background: #e53e3e !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Mobile Optimizations for Emergency Mode */
+@media (max-width: 768px) {
+  .emergency-mobile {
+    font-size: 0.875rem;
+  }
+  
+  .emergency-mobile .btn {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .emergency-mobile .emergency-text-xl {
+    font-size: 1.5rem;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .emergency-mode::before {
+    animation: none;
+    opacity: 0.1;
+  }
+  
+  .emergency-alert,
+  .emergency-critical,
+  .emergency-warning,
+  .triage-immediate {
+    animation: none;
+  }
+  
+  .btn-emergency {
+    animation: none;
+  }
+}
+
+/* Dark Mode Enhancements */
+@media (prefers-color-scheme: dark) {
+  .emergency-mode {
+    color-scheme: dark;
+  }
+  
+  .emergency-modal-content {
+    background: #2d3748;
+  }
+}
+
+/* Accessibility Enhancements */
+.emergency-mode:focus-visible {
+  outline: 3px solid #e53e3e;
+  outline-offset: 2px;
+}
+
+.emergency-high-contrast {
+  filter: contrast(1.5) brightness(1.2);
+}
+
+/* Emergency Data Visualization */
+.emergency-chart {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid #e53e3e;
+  border-radius: 0.25rem;
+  padding: 1rem;
+}
+
+.emergency-progress {
+  background: #4a5568;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.emergency-progress-bar {
+  background: linear-gradient(45deg, #e53e3e, #c53030);
+  height: 0.5rem;
+  transition: width 0.3s ease;
+}
+
+/* Emergency Notification Styles */
+.emergency-toast {
+  background: #1a202c;
+  border-left: 4px solid #e53e3e;
+  color: white;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: slideInRight 0.3s ease;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Emergency Loading States */
+.emergency-loading {
+  background: linear-gradient(90deg, #4a5568 25%, #718096 50%, #4a5568 75%);
+  background-size: 200% 100%;
+  animation: loadingShimmer 1.5s infinite;
+}
+
+@keyframes loadingShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

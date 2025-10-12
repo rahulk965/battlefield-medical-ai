@@ -1,0 +1,59 @@
+/* Fallback base styles (used when Tailwind build isn't available)
+	 This provides minimal utilities used by the app so the UI remains usable.
+*/
+html, body, #root {
+	height: 100%;
+}
+body {
+	margin: 0;
+	font-family: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial;
+	background: #0f172a; /* fallback dark bg */
+	color: #fff;
+}
+
+/* Minimal utility helpers */
+.bg-gray-900 { background-color: #0f172a !important; }
+.text-white { color: #ffffff !important; }
+.container { max-width: 1280px; margin: 0 auto; padding: 1rem; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.min-h-screen { min-height: 100vh; }
+
+/* Some commonly used classes in app components */
+.bg-military-dark { background-color: #1a202c !important; }
+.bg-military-medium { background-color: #2d3748 !important; }
+.rounded-xl { border-radius: 1rem !important; }
+.shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0,0,0,0.6) !important; }
+.border { border: 1px solid rgba(255,255,255,0.06) !important; }
+.p-4 { padding: 1rem !important; }
+.p-6 { padding: 1.5rem !important; }
+.text-sm { font-size: 0.875rem !important; }
+.text-xs { font-size: 0.75rem !important; }
+.font-bold { font-weight: 700 !important; }
+
+/* Buttons */
+.bg-blue-600 { background-color: #2563eb !important; }
+.hover\:bg-blue-700:hover { background-color: #1d4ed8 !important; }
+.bg-red-600 { background-color: #dc2626 !important; }
+.text-gray-400 { color: #9ca3af !important; }
+
+/* Inputs */
+.rounded-lg { border-radius: 0.5rem !important; }
+.border-gray-600 { border-color: rgba(255,255,255,0.06) !important; }
+.bg-gray-700 { background-color: #374151 !important; }
+.text-gray-300 { color: #d1d5db !important; }
+
+/* Simple layout helpers */
+.flex { display: flex !important; }
+.items-center { align-items: center !important; }
+.justify-between { justify-content: space-between !important; }
+.space-x-2 > * + * { margin-left: 0.5rem !important; }
+
+/* Fallback for whitespace-pre-wrap */
+.whitespace-pre-wrap { white-space: pre-wrap !important; }
+
+/* small utility for hidden */
+.hidden { display: none !important; }
+
+/* end fallback styles */

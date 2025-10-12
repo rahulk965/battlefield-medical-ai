@@ -1,0 +1,109 @@
+{
+  "gunshot wound": {
+    "diagnosis": "Ballistic Trauma",
+    "triage": "IMMEDIATE",
+    "firstAid": [
+      "Apply direct pressure to control bleeding",
+      "Check for exit wound - treat both entry and exit",
+      "Apply hemostatic gauze if available",
+      "Use pressure dressing - do not remove if soaked",
+      "Monitor for signs of shock (pale, cold, rapid pulse)",
+      "Maintain airway and breathing",
+      "Elevate legs if no spinal injury suspected",
+      "Prepare for emergency evacuation",
+      "Document time of injury and vital signs"
+    ],
+    "militaryContext": {
+      "evacuationPriority": 1,
+      "fieldTreatment": "Hemostatic agents, tourniquet if extremity",
+      "morphineAuthorization": true,
+      "medevacRequired": true
+    }
+  },
+  "shrapnel wound": {
+    "diagnosis": "Blast Fragment Injury",
+    "triage": "IMMEDIATE",
+    "firstAid": [
+      "Do not remove embedded fragments",
+      "Control bleeding with direct pressure",
+      "Apply sterile dressing around fragments",
+      "Check for multiple entry points",
+      "Monitor for internal bleeding signs",
+      "Assess for traumatic amputation",
+      "Treat for shock",
+      "Document fragment locations"
+    ]
+  },
+  "burn": {
+    "diagnosis": "Thermal Injury",
+    "triage": "DELAYED",
+    "firstAid": [
+      "Stop burning process - remove from source",
+      "Cool burn with clean water for 10-20 minutes",
+      "Do not use ice or break blisters",
+      "Cover with sterile non-stick dressing",
+      "Monitor breathing if facial burns present",
+      "Elevate burned extremities",
+      "Pain management if available",
+      "Fluid replacement if extensive burns"
+    ],
+    "militaryContext": {
+      "chemicalCheck": true,
+      "evacuationPriority": 2
+    }
+  },
+  "fracture": {
+    "diagnosis": "Bone Fracture",
+    "triage": "DELAYED",
+    "firstAid": [
+      "Immobilize injured area with splint",
+      "Check circulation beyond injury",
+      "Apply cold pack if available",
+      "Elevate if possible",
+      "Do not attempt to realign bone",
+      "Monitor for compartment syndrome",
+      "Pain management",
+      "Prepare for evacuation"
+    ]
+  },
+  "concussion": {
+    "diagnosis": "Traumatic Brain Injury",
+    "triage": "IMMEDIATE",
+    "firstAid": [
+      "Monitor level of consciousness",
+      "Check pupil response",
+      "Maintain cervical spine immobilization",
+      "Do not give food or water",
+      "Monitor for vomiting",
+      "Check for other injuries",
+      "Document neurological checks every 15 minutes",
+      "Emergency evacuation required"
+    ]
+  },
+  "chest pain": {
+    "diagnosis": "Cardiac/Respiratory Distress",
+    "triage": "IMMEDIATE",
+    "firstAid": [
+      "Sit patient up if breathing difficult",
+      "Loosen tight clothing",
+      "Monitor breathing and pulse",
+      "Be prepared for CPR",
+      "Check for chest wounds",
+      "Administer oxygen if available",
+      "Emergency evacuation"
+    ]
+  },
+  "bleeding": {
+    "diagnosis": "Hemorrhage",
+    "triage": "IMMEDIATE",
+    "firstAid": [
+      "Apply direct pressure with sterile dressing",
+      "Elevate wound above heart level",
+      "Use pressure points if direct pressure fails",
+      "Apply tourniquet 2-3 inches above wound if severe",
+      "Document tourniquet time",
+      "Do not remove soaked dressings - add more",
+      "Treat for shock"
+    ]
+  }
+}
